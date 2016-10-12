@@ -1,0 +1,41 @@
+def imp(vector):
+    for x in vector:
+        print x
+
+def sumar(vector):
+    total = 0
+    for x in vector:
+        
+        total += x
+    return total
+    
+def prom(vector):
+    sum_vector = sumar(vector)
+    prom = float(sum_vector) / len(vector)
+    return prom
+
+def varianaza(scores, prom):
+    sumatorio = 0
+    for data in scores:
+        sumatorio += (prom - float(data))**2
+    variance = float(sumatorio)/len(scores)
+    return variance
+
+
+
+def combin(dado1,dado2):
+    aux = []
+    for x in range(1,dado1):
+        for y in range(1,dado2):
+            aux.append(x+y)
+    return aux
+                    
+carasDado1 = 8
+carasDado2 = 13
+
+aux = combin(carasDado1,carasDado2)
+prom = promedio(aux)
+print('mediana')
+print(prom)
+print('varianza')
+print(varianaza(aux,prom))
